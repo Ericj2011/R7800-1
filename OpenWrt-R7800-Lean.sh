@@ -74,6 +74,7 @@ EOF
 # 编译R7800固件:
 cat >> .config <<EOF
 CONFIG_TARGET_ipq806x=y
+CONFIG_TARGET_ipq806x_generic=y
 CONFIG_TARGET_ipq806x_generic_DEVICE_netgear_r7800=y
 EOF
 
@@ -161,8 +162,8 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun is not set
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs is not set
 EOF
@@ -241,14 +242,14 @@ EOF
 
 # VPN相关插件(禁用):
 cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-ipsec-vpnserver-manyusers is not set #ipsec VPN服务
-# CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set #IPSec VPN 服务器
+CONFIG_PACKAGE_luci-app-ipsec-vpnserver-manyusers is not set #ipsec VPN服务
+CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set #IPSec VPN 服务器
 # CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE穿透
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE服务器
 # CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
-# CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
+CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
 # CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
-# CONFIG_PACKAGE_luci-app-brook-server is not set #brook服务端
+CONFIG_PACKAGE_luci-app-brook-server is not set #brook服务端
 # CONFIG_PACKAGE_luci-app-ssr-libev-server is not set #ssr-libev服务端
 # CONFIG_PACKAGE_luci-app-ssr-python-pro-server is not set #ssr-python服务端
 # CONFIG_PACKAGE_luci-app-kcptun is not set #Kcptun客户端
